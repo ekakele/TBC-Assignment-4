@@ -106,7 +106,14 @@ task(for: 4, exercise: "შექმენით function რომელიც 
 task(for: 5, exercise: "შექმენით function რომელიც დაითვლის სიტყვების რაოდენობას String-ში, ფუნქციამ უნდა მიიღოს String-ი, და დააბრუნოს dictionary, სიტყვებით და იმ რაოდენობით რამდენჯერ იყო ერთი და იგივე სიტყვა გამოყენებული String-ში. uppercase და lowercase ასოები უნდა იყოს დაჰენდლილი ერთნაირად, მაგალითად თუ function-s გადავაწვდით 'TBC x USAID, tbc it academy, we are in TBC academy.' function-მა უნდა დააბრუნოს '['tbc': 3, 'academy': 2, 'we': 1, 'are': 1, 'in': 1, 'it': 1, 'x': 1]'.") {
     
     //a poem by Sylvia Plath
-    let poem = "I have no wit, I have no words, no tears; My heart within me like a stoneIs numbed too much for hopes or fears; Look right, look left, I dwell alone; A lift mine eyes, but dimmed with grief; No everlasting hills I see; My life is like the falling leaf; O Jesus, quicken me."
+    let poem = """
+                I have no wit, I have no words, no tears;
+                My heart within me like a stoneIs numbed too much for hopes or fears;
+                Look right, look left, I dwell alone;
+                A lift mine eyes, but dimmed with grief;
+                No everlasting hills I see; My life is like the falling leaf;
+                O Jesus, quicken me.
+    """
     
     func makeDictionary(poem: String) -> [String: Int] {
         let poemLowercased = poem.lowercased()
