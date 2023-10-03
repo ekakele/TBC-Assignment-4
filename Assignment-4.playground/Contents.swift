@@ -84,6 +84,7 @@ task(for: 3, exercise: "შექმენით function რომელიც 
 
 
 task(for: 4, exercise: "შექმენით function რომელიც გადაცემულ რიცხვების array-ს ააკვარდატებს, დაპრინტავს და დააბრუნებს მნიშვნელობას.") {
+    //solution #1
     func squareNumber(array: [Int]) -> [Int]? {
         var squaredNumbers: [Int] = []
         // to handle an empty array safely:
@@ -100,7 +101,20 @@ task(for: 4, exercise: "შექმენით function რომელიც 
     } else {
         print("Error: the input array is empty")
     }
+    
+    //solution #2 - passing a function to a .map()
+    let array = [2, 4, 6, 8, 10]
+    func returnSquareNumbers(number: Int) -> Int {
+        return number * number
+    }
+    print(array.map(returnSquareNumbers)) // returns an array containing the transformed elements of the sequence
+    
+    //solution #3 - passing a closure to a .map()
+    let array2 = [2, 4, 6, 8, 10]
+    let squareArray = array2.map{ $0 * $0 } // returns an array containing the transformed elements of the sequence
+    print(squareArray)
 }
+
 
 
 task(for: 5, exercise: "შექმენით function რომელიც დაითვლის სიტყვების რაოდენობას String-ში, ფუნქციამ უნდა მიიღოს String-ი, და დააბრუნოს dictionary, სიტყვებით და იმ რაოდენობით რამდენჯერ იყო ერთი და იგივე სიტყვა გამოყენებული String-ში. uppercase და lowercase ასოები უნდა იყოს დაჰენდლილი ერთნაირად, მაგალითად თუ function-s გადავაწვდით 'TBC x USAID, tbc it academy, we are in TBC academy.' function-მა უნდა დააბრუნოს '['tbc': 3, 'academy': 2, 'we': 1, 'are': 1, 'in': 1, 'it': 1, 'x': 1]'.") {
